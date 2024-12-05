@@ -139,16 +139,20 @@ const FollowAudit: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center space-x-4">
-          <button
-            className="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
-          >
-            Saweria
-          </button>
-          <button
-            className="border-2 border-blue-500/50 px-8 py-3 rounded-xl text-lg font-semibold hover:bg-blue-500/10 transition-all duration-300"
-          >
-            Saweria
-          </button>
+          <div className="flex justify-center space-x-4">
+            <button
+              className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300"
+            >
+              Donate me
+            </button>
+            <button
+              onClick={() => window.open('https://github.com/gvoze32/followaudit', '_blank')}
+              className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center space-x-3 border border-gray-700 shadow-lg hover:shadow-blue-500/20"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 opacity-90" />
+              <span>View project on GitHub</span>
+            </button>
+          </div>
         </div>
       </div>
 
