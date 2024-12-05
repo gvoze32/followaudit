@@ -141,9 +141,11 @@ const FollowAudit: React.FC = () => {
         <div className="mt-16 text-center space-x-4">
           <div className="flex justify-center space-x-4">
             <button
-              className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300"
+              onClick={() => window.open('https://saweria.co/adena', '_blank')}
+              className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 flex items-center space-x-3"
             >
-              Donate me
+              <img src="https://i.ibb.co.com/RTTZPns/01c81f8c-18c9-47d7-b7ad-c04058016626-225x225.png" alt="Ko-fi" className="w-6 h-6" />
+              <span>Donate me</span>
             </button>
             <button
               onClick={() => window.open('https://github.com/gvoze32/followaudit', '_blank')}
