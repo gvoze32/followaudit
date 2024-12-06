@@ -50,28 +50,28 @@ const FollowAudit: React.FC = () => {
     {
       name: "Instagram",
       color: "bg-gradient-to-r from-purple-600 to-pink-600",
-      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" className="w-6 h-6" />,
+      icon: <img src="https://i.ibb.co.com/w0hn9qs/toppng-com-instagram-black-and-white-icon-504x504.png" alt="Instagram" className="w-6 h-6" />,
       stats: "active",
       link: "/instagram"
     },
     {
       name: "X",
       color: "bg-gradient-to-r from-gray-700 to-gray-900",
-      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X" className="w-6 h-6" />,
+      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X" className="w-6 h-6 filter invert" />,
       stats: "untested",
       link: "/x"
     },
     {
       name: "TikTok",
       color: "bg-gradient-to-r from-cyan-500 to-blue-500",
-      icon: <img src="https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" alt="TikTok" className="w-6 h-6" />,
+      icon: <img src="https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" alt="TikTok" className="w-6 h-6 filter invert" />,
       stats: "untested",
       link: "/tiktok"
     },
     {
       name: "GitHub",
       color: "bg-gradient-to-r from-gray-800 to-gray-900",
-      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6" />,
+      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 filter invert" />,
       stats: "active",
       link: "/github"
     }
@@ -149,7 +149,7 @@ const FollowAudit: React.FC = () => {
               onClick={() => window.location.href = ('https://github.com/gvoze32/followaudit')}
               className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-3 border border-gray-700 shadow-lg hover:shadow-blue-500/20"
             >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 opacity-90" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 filter invert" />
               <span>View project on GitHub</span>
             </button>
           </div>
