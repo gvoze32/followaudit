@@ -58,14 +58,14 @@ const FollowAudit: React.FC = () => {
       name: "X",
       color: "bg-gradient-to-r from-gray-700 to-gray-900",
       icon: <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X" className="w-6 h-6" />,
-      stats: "active",
+      stats: "untested",
       link: "/x"
     },
     {
       name: "TikTok",
       color: "bg-gradient-to-r from-cyan-500 to-blue-500",
       icon: <img src="https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" alt="TikTok" className="w-6 h-6" />,
-      stats: "active",
+      stats: "untested",
       link: "/tiktok"
     },
     {
@@ -105,7 +105,7 @@ const FollowAudit: React.FC = () => {
                     <span className="text-3xl">{platform.icon}</span>
                     <span className="text-lg font-semibold">{platform.name}</span>
                     </div>
-                    <div className="bg-green-300/20 px-4 py-2 rounded-full">
+                    <div className={`px-4 py-2 rounded-full ${platform.stats === 'active' ? 'bg-green-300/20 text-green-300' : 'bg-red-300/20 text-red-300'}`}>
                     {platform.stats}
                     </div>
                 </div>
@@ -138,25 +138,25 @@ const FollowAudit: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-16 text-center space-x-4">
-          <div className="flex justify-center space-x-4">
+        <div className="mt-16 text-center">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               onClick={() => window.open('https://saweria.co/adena', '_blank')}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 flex items-center space-x-3"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 flex items-center justify-center space-x-3"
             >
               <img src="https://i.ibb.co.com/RTTZPns/01c81f8c-18c9-47d7-b7ad-c04058016626-225x225.png" alt="Ko-fi" className="w-6 h-6" />
               <span>Donate me</span>
             </button>
             <button
               onClick={() => window.open('https://github.com/gvoze32/followaudit', '_blank')}
-              className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center space-x-3 border border-gray-700 shadow-lg hover:shadow-blue-500/20"
+              className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-3 border border-gray-700 shadow-lg hover:shadow-blue-500/20"
             >
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 opacity-90" />
               <span>View project on GitHub</span>
             </button>
           </div>
         </div>
-      </div>
+            </div>
 
       <footer className="border-t border-gray-800 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
