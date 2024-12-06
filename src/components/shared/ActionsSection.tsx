@@ -1,4 +1,3 @@
-import React from 'react';
 import { HiOutlineDocumentSearch, HiOutlineUserRemove, HiOutlineUsers } from 'react-icons/hi';
 
 export const ActionsSection = ({ 
@@ -12,7 +11,6 @@ export const ActionsSection = ({
   onHowTo: () => void;
   checkNotFollowing?: () => void;
 }) => {
-  // Add debug log
   console.log('Platform:', platform);
   console.log('checkNotFollowing:', checkNotFollowing);
 
@@ -28,7 +26,6 @@ export const ActionsSection = ({
           {platform === "GitHub" ? "Check Non-Followers" : "Check Files"}
         </button>
 
-        {/* Modified condition to check exact string match */}
         {platform === "GitHub" && (
           <button
             onClick={checkNotFollowing}

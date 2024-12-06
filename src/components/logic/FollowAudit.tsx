@@ -90,7 +90,6 @@ const FollowAudit: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Platform Analytics Card */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-xl">
             <h2 className="text-2xl font-bold text-white mb-6">Platform Analytics</h2>
             <div className="space-y-4">
@@ -114,7 +113,6 @@ const FollowAudit: React.FC = () => {
             </div>
           </div>
 
-          {/* Key Features Card */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-xl">
             <h2 className="text-2xl font-bold text-white mb-6">Key Features</h2>
             <div className="space-y-4">

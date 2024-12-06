@@ -1,4 +1,3 @@
-// shared/index.tsx
 export { SharedLayout } from './SharedLayout';
 export { NonFollowersTable } from './NonFollowersTable';
 export { UploadSection } from './UploadSection';

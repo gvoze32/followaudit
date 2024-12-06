@@ -1,7 +1,5 @@
-// src/components/shared/InputSection.tsx
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-// InputSection.tsx
 interface InputSectionProps {
   username: string;
   setUsername: (username: string) => void;

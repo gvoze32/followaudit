@@ -1,4 +1,3 @@
-// UploadSection.tsx
 import React from 'react';
 
 interface UploadSectionProps {
@@ -33,7 +32,6 @@ export const UploadSection = ({
           />
         </div>
         
-        {/* Only show following file upload if platform is not TikTok */}
         {platform !== "TikTok" && (
           <div>
             <label

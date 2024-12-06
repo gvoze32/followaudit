@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import { SharedLayout, NonFollowersTable, UploadSection, ActionsSection } from '../shared';
-import { 
-  HiOutlineDocumentSearch, 
-  HiOutlineUserRemove,
-  HiHome,
-  HiChevronRight,
-} from 'react-icons/hi';
+import { ActionsSection, NonFollowersTable, SharedLayout, UploadSection } from '../shared';
 
 interface InstagramUser {
   username: string;
