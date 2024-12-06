@@ -96,17 +96,17 @@ const FollowAudit: React.FC = () => {
             {platforms.map((platform) => (
                 <div
                 key={platform.name}
-                onClick={() => window.open(platform.link, '_blank')}
+                onClick={() => window.location.href = platform.link}
                 className={`${platform.color} rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
                 >
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                    <span className="text-3xl">{platform.icon}</span>
-                    <span className="text-lg font-semibold">{platform.name}</span>
-                    </div>
-                    <div className={`px-4 py-2 rounded-full ${platform.stats === 'active' ? 'bg-green-300/20 text-green-300' : 'bg-red-300/20 text-red-300'}`}>
-                    {platform.stats}
-                    </div>
+                  <div className="flex items-center space-x-4">
+                  <span className="text-3xl">{platform.icon}</span>
+                  <span className="text-lg font-semibold">{platform.name}</span>
+                  </div>
+                  <div className={`px-4 py-2 rounded-full ${platform.stats === 'active' ? 'bg-green-300/20 text-green-300' : 'bg-red-300/20 text-red-300'}`}>
+                  {platform.stats}
+                  </div>
                 </div>
                 </div>
             ))}
@@ -139,14 +139,14 @@ const FollowAudit: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button
-              onClick={() => window.open('https://saweria.co/adena', '_blank')}
+              onClick={() => window.location.href = 'https://saweria.co/adena'}
               className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 flex items-center justify-center space-x-3"
             >
               <img src="https://i.ibb.co.com/RTTZPns/01c81f8c-18c9-47d7-b7ad-c04058016626-225x225.png" alt="Ko-fi" className="w-6 h-6" />
               <span>Donate me</span>
             </button>
             <button
-              onClick={() => window.open('https://github.com/gvoze32/followaudit', '_blank')}
+              onClick={() => window.location.href = ('https://github.com/gvoze32/followaudit')}
               className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-3 border border-gray-700 shadow-lg hover:shadow-blue-500/20"
             >
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="w-6 h-6 opacity-90" />
