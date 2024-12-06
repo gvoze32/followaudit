@@ -15,10 +15,10 @@ export const SharedLayout = ({ children, platform }: { children: React.ReactNode
             </li>
             <li>
               <div className="flex items-center">
-                <HiChevronRight className="w-5 h-5 text-gray-500" />
-                <span className="ml-1 text-sm font-medium text-gray-500">
-                  {platform}
-                </span>
+              <HiChevronRight className="w-5 h-5 text-gray-500" />
+              <a href={`/${platform.toLowerCase()}`} className="ml-1 text-sm font-medium text-gray-400 hover:text-white">
+                {platform}
+              </a>
               </div>
             </li>
           </ol>
