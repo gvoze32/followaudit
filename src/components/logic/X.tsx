@@ -18,6 +18,7 @@ const XNotFollow: React.FC = () => {
   const [followersData, setFollowersData] = useState<any[]>([]);
   const [followingData, setFollowingData] = useState<any[]>([]);
   const [nonFollowers, setNonFollowers] = useState<XUser[]>([]);
+  const [showHowTo, setShowHowTo] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleFollowersFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,6 +85,10 @@ const XNotFollow: React.FC = () => {
     const updatedNonFollowers = [...nonFollowers];
   };
 
+  const toggleHowTo = () => {
+    setShowHowTo(prev => !prev);
+  };
+
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   return (
@@ -100,8 +105,31 @@ const XNotFollow: React.FC = () => {
           handleFollowingFileUpload={handleFollowingFileUpload}
           platform="X"
         />
-        <ActionsSection processFiles={processFiles} platform="X" onHowTo={() => {}} checkNotFollowing={() => {}} />
+        <ActionsSection processFiles={processFiles} platform="X" onHowTo={toggleHowTo} checkNotFollowing={() => {}} />
       </div>
+
+      {showHowTo && (
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow m-4 p-6 mb-4 mx-auto">
+            <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-bold text-white">How to Download Your X Data</h3>
+            <button 
+              className="bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition duration-300" 
+              onClick={toggleHowTo}
+            >
+              Close
+            </button>
+            </div>
+            <ol className="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Tap your profile icon.</li>
+            <li>Tap Settings and privacy.</li>
+            <li>Select Your account.</li>
+            <li>Tap Download an archive of your data.</li>
+            <li>Confirm your password, then tap Request archive.</li>
+            <li>Once ready, download the ZIP file containing your data.</li>
+            <li>Extract the ZIP file and locate the follower.js and following.js file.</li>
+            </ol>
+        </div>
+      )}
 
       <NonFollowersTable 
         nonFollowers={nonFollowers.map(follower => ({

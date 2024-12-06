@@ -17,6 +17,7 @@ const TiktokNotFollow = () => {
   const [userData, setUserData] = useState<any>(null);
   const [nonFollowers, setNonFollowers] = useState<TikTokUser[]>([]);
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [showHowTo, setShowHowTo] = useState<boolean>(false);
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   const handleFollowersFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +67,10 @@ const TiktokNotFollow = () => {
     }
   };
 
+  const toggleHowTo = () => {
+    setShowHowTo(prev => !prev);
+  };
+
   return (
     <SharedLayout platform="TikTok">
       {errorMessage && (
@@ -80,8 +85,35 @@ const TiktokNotFollow = () => {
           handleFollowingFileUpload={handleFollowersFileUpload}
           platform="TikTok"
         />
-        <ActionsSection processFiles={processFiles} platform="TikTok" onHowTo={() => {}} checkNotFollowing={() => {}} />
+        <ActionsSection processFiles={processFiles} platform="TikTok" onHowTo={toggleHowTo} checkNotFollowing={() => {}} />
       </div>
+
+      {showHowTo && (
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow m-4 p-6 mb-4 mx-auto">
+            <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-bold text-white">How to Download Your TikTok Data</h3>
+            <button 
+              className="bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition duration-300" 
+              onClick={toggleHowTo}
+            >
+              Close
+            </button>
+            </div>
+            <ol className="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Open TikTok and go to your profile.</li>
+            <li>Tap the three-line menu icon in the top right.</li>
+            <li>Go to "Settings and privacy".</li>
+            <li>Tap "Account", then tap on "Download your data".</li>
+            <li>Tap "Select data to download".</li>
+            <li>Choose "Custom" then check "Profile and posts".</li>
+            <li>Tap "Select file format".</li>
+            <li>Select "JSON" as the file format.</li>
+            <li>Tap "Request data".</li>
+            <li>Once ready, download the ZIP file containing your data.</li>
+            <li>Extract the ZIP file and locate the user_data.json file.</li>
+            </ol>
+        </div>
+      )}
 
       <NonFollowersTable 
         nonFollowers={nonFollowers}

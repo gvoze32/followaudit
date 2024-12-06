@@ -15,6 +15,7 @@ const GitHubNotFollow: React.FC = () => {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const [resultType, setResultType] = useState<'nonfollowers' | 'notfollowing' | null>(null);
   const [resultCaption, setResultCaption] = useState('');
+  const [showHowTo, setShowHowTo] = useState<boolean>(false);
 
   const fetchAllPages = async (url: string): Promise<GitHubUser[]> => {
     let allData: GitHubUser[] = [];
@@ -159,9 +160,9 @@ const handleCheck = (type: 'nonfollowers' | 'notfollowing') => {
   }
 };
 
-  const handleHowTo = () => {
-    setErrorMessage('To get started, enter a GitHub username and click on the "Check Non-Followers" or "Check Not Following" button.');
-  };
+const toggleHowTo = () => {
+  setShowHowTo(prev => !prev);
+};
 
   return (
     <SharedLayout platform="GitHub">
@@ -175,9 +176,29 @@ const handleCheck = (type: 'nonfollowers' | 'notfollowing') => {
           processFiles={() => handleCheck('nonfollowers')}
           checkNotFollowing={() => handleCheck('notfollowing')}
           platform="GitHub"
-          onHowTo={handleHowTo}
+          onHowTo={toggleHowTo}
         />
       </div>
+
+      {showHowTo && (
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow m-4 p-6 mb-4 mx-auto">
+            <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-bold text-white">How to Use This Tool</h3>
+            <button 
+              className="bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition duration-300" 
+              onClick={toggleHowTo}
+            >
+              Close
+            </button>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Enter a GitHub username in the input field and click on the "Check Non-Followers" button to identify users who do not follow you back
+            </p>
+            <p className="text-gray-300 mb-4">
+              Alternatively, click on the "Check Not Following" button to see a list of users you do not follow back.
+            </p>
+        </div>
+      )}
 
       {errorMessage && (
         <div className="text-red-500 mt-4 text-center">{errorMessage}</div>
